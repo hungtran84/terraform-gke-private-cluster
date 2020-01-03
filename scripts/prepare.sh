@@ -91,7 +91,7 @@ if [ "$AVAIL" -eq 0 ]
 then 
     gsutil mb -p "$SEED_PROJECT" gs://"$BUCKET"
     gsutil versioning set on gs://"$BUCKET"
-    gsutil acl ch -u ${TERRAFORM_SA_EMAIL}:W gs://"${BUCKET}"
+    gsutil acl ch -u "${TERRAFORM_SA_EMAIL}":W gs://"${BUCKET}"
 
 else
     echo "Bucket ${BUCKET} already existed"
